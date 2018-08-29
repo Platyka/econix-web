@@ -1,0 +1,46 @@
+.header {
+  margin-top: 5rem;
+  grid-column: 1 / -1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../img/Hero.jpg");
+  background-size: cover;
+  height: 50vh;
+  position: relative;
+
+  &__title {
+    text-align: center;
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 3.6rem;
+    padding: 2rem;
+  }
+
+  &__cta {
+    margin-top: 4rem !important;
+    background-color: var(--color-primary);
+    display: block;
+    margin: 0 auto;
+    font-family: inherit;
+    color: var(--color-white);
+    border: none;
+    border-radius: 100px;
+    outline: none;
+    cursor: pointer;
+    padding: 0.7rem 2rem;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+  }
+}

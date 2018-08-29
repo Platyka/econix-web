@@ -1,0 +1,170 @@
+:root {
+  --color-primary: #429084;
+  --color-white: #fff;
+  --color-black: #131313;
+  --color-grey: #707070;
+  --color-light-grey: #f8f8f8; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-family: Roboto;
+  color: var(--color-black); }
+
+main {
+  grid-column: 1 / -1; }
+
+.heading-2 {
+  color: var(--color-white);
+  font-size: 2.4rem; }
+
+.paragraph {
+  font-size: 1.6rem;
+  color: var(--color-white); }
+
+.nav {
+  height: 5rem;
+  background-color: var(--color-white);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--color-black);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; }
+  .nav__menu {
+    height: 4.8rem;
+    padding: 1rem 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .nav__menu--bar-1, .nav__menu--bar-2, .nav__menu--bar-3 {
+      width: 2.1rem;
+      height: 3px;
+      background-color: var(--color-black);
+      transition: all 0.2s ease-out; }
+    .nav__menu--bar-1 {
+      transform: translateY(-4px); }
+    .nav__menu--bar-3 {
+      transform: translateY(4px); }
+    .nav__menu:hover {
+      transform: scale(1.1);
+      transform-origin: 0;
+      cursor: pointer; }
+    .nav__menu:hover .nav__menu--bar-1 {
+      transform: translateY(-6px); }
+    .nav__menu:hover .nav__menu--bar-3 {
+      transform: translateY(6px); }
+  .nav__logo:link, .nav__logo:visited {
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: 2.4rem;
+    transition: all 0.4s ease; }
+  .nav__logo:hover {
+    color: var(--color-grey); }
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) repeat(4, minmax(min-content, 8.85rem)) minmax(1rem, 1fr); }
+
+.header {
+  margin-top: 5rem;
+  grid-column: 1 / -1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../img/Hero.jpg");
+  background-size: cover;
+  height: 50vh;
+  position: relative; }
+  .header__title {
+    text-align: center;
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 3.6rem;
+    padding: 2rem; }
+  .header__cta {
+    margin-top: 4rem !important;
+    background-color: var(--color-primary);
+    display: block;
+    margin: 0 auto;
+    font-family: inherit;
+    color: var(--color-white);
+    border: none;
+    border-radius: 100px;
+    outline: none;
+    cursor: pointer;
+    padding: 0.7rem 2rem;
+    font-size: 1.6rem;
+    transition: all 0.3s ease; }
+    .header__cta:hover {
+      transform: scale(1.1); }
+  .header__img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%); }
+
+.section-about {
+  height: 50vh;
+  grid-column: 1/ -1;
+  background-color: var(--color-primary);
+  padding: 10rem 1rem 0 1rem; }
+
+.about__title, .about__text {
+  text-align: center;
+  font-weight: 400; }
+
+.about__title {
+  margin-bottom: 3rem; }
+
+.section-services {
+  grid-column: 1 / -1; }
+
+.service {
+  background-color: var(--color-black);
+  display: grid;
+  justify-items: center;
+  padding: 2rem 1rem;
+  grid-row-gap: 1rem; }
+  .service__icon {
+    width: 8rem;
+    height: 7rem; }
+  .service__list {
+    color: var(--color-white);
+    font-size: 1.6rem;
+    list-style: none;
+    padding: 3rem; }
+  .service__item {
+    padding-bottom: 1rem; }
+  .service__btn {
+    background-color: var(--color-primary);
+    display: block;
+    margin: 0 auto;
+    font-family: inherit;
+    color: var(--color-white);
+    border: none;
+    border-radius: 100px;
+    outline: none;
+    cursor: pointer;
+    padding: 0.7rem 2rem;
+    font-size: 1.6rem;
+    transition: all 0.3s ease; }
+    .service__btn:hover {
+      transform: scale(1.1); }
+  .service:nth-of-type(2n) {
+    background-color: var(--color-light-grey); }
+  .service:nth-of-type(2n) .service__list {
+    color: var(--color-black); }
