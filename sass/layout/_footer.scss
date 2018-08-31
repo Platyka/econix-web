@@ -1,0 +1,51 @@
+.footer {
+  grid-column: 1 / -1;
+  background-color: var(--color-black);
+  padding: 2rem 1rem;
+
+  &-box {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  &__information {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__information:not(:last-child) {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  &__information:last-child {
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+
+  &__icon {
+    width: 2rem;
+  }
+
+  &__icon:last-child {
+    width: 1.6rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__text {
+    color: var(--color-white);
+    font-size: 1.4rem;
+    text-align: end;
+  }
+
+  &__copyright {
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+  }
+}

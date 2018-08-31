@@ -3,7 +3,8 @@
   --color-white: #fff;
   --color-black: #131313;
   --color-grey: #707070;
-  --color-light-grey: #f8f8f8; }
+  --color-light-grey: #f8f8f8;
+  --color-primary-light: #5dc6b2; }
 
 *,
 *::after,
@@ -30,6 +31,78 @@ main {
 .paragraph {
   font-size: 1.6rem;
   color: var(--color-white); }
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: none; }
+
+.modal-contact {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white);
+  width: 90%;
+  height: 90%;
+  z-index: 1000;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  backface-visibility: hidden;
+  display: none; }
+  .modal-contact__btn {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    justify-self: end;
+    transition: all 0.3s ease;
+    cursor: pointer; }
+    .modal-contact__btn:hover {
+      transform: scale(1.15); }
+  .modal-contact__btn-image {
+    width: 2rem;
+    height: 2rem; }
+  .modal-contact__title {
+    font-size: 3.6rem;
+    font-weight: 400;
+    margin-bottom: 5rem;
+    justify-self: center; }
+  .modal-contact-box {
+    width: 75%;
+    margin: 0 auto; }
+  .modal-contact__information {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem; }
+  .modal-contact__information:last-child {
+    justify-content: center; }
+  .modal-contact__icon {
+    width: 2rem; }
+  .modal-contact__icon:last-child {
+    width: 1.7rem;
+    justify-content: center;
+    transition: all 0.3s ease; }
+    .modal-contact__icon:last-child:hover {
+      transform: scale(1.2); }
+  .modal-contact__text {
+    font-size: 1.6rem;
+    text-align: end; }
+  .modal-contact__map {
+    width: 100%;
+    background-color: var(--color-primary); }
+
+.icon {
+  width: 2rem; }
 
 .nav {
   height: 5rem;
@@ -76,6 +149,50 @@ main {
   .nav__logo:hover {
     color: var(--color-grey); }
 
+.side-nav {
+  position: fixed;
+  z-index: 1000;
+  height: 100%;
+  width: 80%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  display: none; }
+  .side-nav__title {
+    font-size: 3.6rem;
+    font-weight: 400;
+    margin-bottom: 14.5rem; }
+  .side-nav__list {
+    list-style: none; }
+  .side-nav__item:last-child {
+    background: var(--color-primary);
+    width: 16rem;
+    margin: 0 auto;
+    border-radius: 100px;
+    margin-top: 4rem;
+    transition: all 0.3s ease; }
+    .side-nav__item:last-child:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); }
+    .side-nav__item:last-child a {
+      font-size: 1.6rem;
+      padding: 1.5rem 2rem;
+      color: var(--color-white); }
+  .side-nav__item:not(:last-child):hover {
+    background-color: var(--color-light-grey); }
+  .side-nav__link:link, .side-nav__link:visited {
+    display: block;
+    font-size: 2.4rem;
+    text-decoration: none;
+    color: var(--color-black);
+    padding: 1rem; }
+  .side-nav__copyright {
+    margin-top: auto; }
+
 .container {
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) repeat(4, minmax(min-content, 8.85rem)) minmax(1rem, 1fr); }
@@ -117,6 +234,39 @@ main {
     top: 50%;
     transform: translateX(-50%); }
 
+.footer {
+  grid-column: 1 / -1;
+  background-color: var(--color-black);
+  padding: 2rem 1rem; }
+  .footer-box {
+    width: 70%;
+    margin: 0 auto; }
+  .footer__information {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+  .footer__information:not(:last-child) {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
+  .footer__information:last-child {
+    justify-content: center;
+    margin-bottom: 4rem; }
+  .footer__icon {
+    width: 2rem; }
+  .footer__icon:last-child {
+    width: 1.6rem;
+    transition: all 0.3s ease; }
+    .footer__icon:last-child:hover {
+      transform: scale(1.2); }
+  .footer__text {
+    color: var(--color-white);
+    font-size: 1.4rem;
+    text-align: end; }
+  .footer__copyright {
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center; }
+
 .section-about {
   height: 50vh;
   grid-column: 1/ -1;
@@ -146,7 +296,8 @@ main {
     color: var(--color-white);
     font-size: 1.6rem;
     list-style: none;
-    padding: 3rem; }
+    padding: 3rem 0;
+    text-align: center; }
   .service__item {
     padding-bottom: 1rem; }
   .service__btn {
@@ -164,7 +315,56 @@ main {
     transition: all 0.3s ease; }
     .service__btn:hover {
       transform: scale(1.1); }
+  .service__link:link, .service__link:visited {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.6rem;
+    border-bottom: 1px solid var(--color-primary);
+    transition: all 0.3s ease; }
+    .service__link:link:hover, .service__link:visited:hover {
+      border-bottom: 1px solid transparent;
+      color: var(--color-primary-light); }
   .service:nth-of-type(2n) {
     background-color: var(--color-light-grey); }
-  .service:nth-of-type(2n) .service__list {
+  .service:nth-of-type(2n) .service__list,
+  .service:nth-of-type(2n) .service__label {
     color: var(--color-black); }
+
+.section-reviews {
+  grid-column: 1 / -1;
+  background-color: var(--color-primary);
+  display: grid;
+  justify-items: center;
+  padding: 2rem 1rem;
+  grid-row-gap: 2rem;
+  color: var(--color-white);
+  font-size: 1.6rem;
+  position: relative; }
+
+.review__icon {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: 3.5rem; }
+
+.review__user {
+  text-align: center; }
+
+.review__rating {
+  margin-top: 4rem;
+  width: 40%; }
+
+.review__arrows {
+  position: absolute;
+  padding: 0 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
+  .review__arrows--left, .review__arrows--right {
+    width: 3rem;
+    transition: all 0.4s ease; }
+  .review__arrows--left:hover, .review__arrows--right:hover {
+    transform: scale(1.2);
+    cursor: pointer; }

@@ -1,3 +1,6 @@
+//**********************
+// SECTION ABOUT
+
 .section-about {
   height: 50vh;
   grid-column: 1/ -1;
@@ -16,6 +19,9 @@
     margin-bottom: 3rem;
   }
 }
+
+//**************************
+// SECTION SERVICES
 
 .section-services {
   grid-column: 1 / -1;
@@ -37,7 +43,8 @@
     color: var(--color-white);
     font-size: 1.6rem;
     list-style: none;
-    padding: 3rem;
+    padding: 3rem 0;
+    text-align: center;
   }
 
   &__item {
@@ -63,11 +70,80 @@
     }
   }
 
+  &__link:link,
+  &__link:visited {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.6rem;
+    border-bottom: 1px solid var(--color-primary);
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-bottom: 1px solid transparent;
+      color: var(--color-primary-light);
+    }
+  }
+
   &:nth-of-type(2n) {
     background-color: var(--color-light-grey);
   }
 
-  &:nth-of-type(2n) &__list {
+  &:nth-of-type(2n) &__list,
+  &:nth-of-type(2n) &__label {
     color: var(--color-black);
+  }
+}
+
+// ************************
+// SECTION REVIEWS
+.section-reviews {
+  grid-column: 1 / -1;
+  background-color: var(--color-primary);
+  display: grid;
+  justify-items: center;
+  padding: 2rem 1rem;
+  grid-row-gap: 2rem;
+  color: var(--color-white);
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.review {
+  &__icon {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 3.5rem;
+  }
+
+  &__user {
+    text-align: center;
+  }
+
+  &__rating {
+    margin-top: 4rem;
+    width: 40%;
+  }
+
+  &__arrows {
+    position: absolute;
+    padding: 0 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &--left,
+    &--right {
+      width: 3rem;
+      transition: all 0.4s ease;
+    }
+
+    &--left:hover,
+    &--right:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
   }
 }

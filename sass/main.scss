@@ -4,8 +4,13 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import "components/backdrop";
+@import "components/modal-contact";
+@import "components/icon";
+
 @import "layout/navigation";
 @import "layout/grid";
 @import "layout/header";
+@import "layout/footer";
 
 @import "pages/home";

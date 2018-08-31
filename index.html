@@ -10,6 +10,40 @@
 </head>
 
 <body class="container">
+    <div class="backdrop"></div>
+    <div class="modal-contact">
+        <button class="modal-contact__btn"><img src="img/No.svg" alt="Close button" class="modal-contact__btn-image"></button>
+        <h1 class="modal-contact__title">Contact</h1>
+        <div class="modal-contact-box">
+            <div class="modal-contact__information">
+                <img src="img/phone-black.svg" alt="Phone icon" class="modal-contact__icon">
+                <p class="modal-contact__text">0753 681 667</p>
+            </div>
+            <div class="modal-contact__information">
+                <img src="img/pin-black.svg" alt="Pin icon" class="modal-contact__icon">
+                <div class="modal-contact__text-box">
+                    <p class="modal-contact__text">Strada Napoca, nr. 5</p>
+                    <p class="modal-contact__text">Cluj-Napoca, Cluj
+                    </p>
+                    <p class="modal-contact__text">Luni-Joi: 10:15-18:00</p>
+                    <p class="modal-contact__text">Vineri: 10:15-16:00</p>
+                </div>
+            </div>
+            <div class="modal-contact__information">
+                <a href="#" class="modal-contact__link"><img src="img/facebook-black.svg" alt="Facebook icon" class="modal-contact__icon"></a>
+            </div>
+        </div>
+        <div class="modal-contact__map"></div>
+    </div>
+    <nav class="side-nav">
+        <h1 class="side-nav__title">Econix</h1>
+        <ul class="side-nav__list">
+            <li class="side-nav__item"><a href="#" class="side-nav__link">Despre noi</a></li>
+            <li class="side-nav__item"><a href="#" class="side-nav__link">Servicii</a></li>
+            <li class="side-nav__item"><a href="#" class="side-nav__link">Contactează - ne</a></li>
+        </ul>
+        <p class="side-nav__copyright">&copy; 2018 Econix - Reparații laptop și telecomenzi</p>
+    </nav>
     <nav class="nav">
         <div class="nav__menu">
             <div class="nav__menu--bar-1"></div>
@@ -36,7 +70,7 @@
 
         <section class="section-services">
             <div class="service">
-                <img src="img/laptop-solid-white.svg" alt="Icon 1" class="service__icon">
+                <img src="img/reparatii-white.svg" alt="Icon 1" class="service__icon">
                 <p class="service__label heading-2">Reparații laptopuri</p>
                 <ul class="service__list">
                     <li class="service__item">Display</li>
@@ -44,21 +78,77 @@
                     <li class="service__item">HDD</li>
                     <li class="service__item">Memorie</li>
                 </ul>
-                <button class="service__btn">Mai mult...</button>
+                <button class="service__btn">Mai multe...</button>
             </div>
             <div class="service">
-                <img src="img/laptop-solid-white.svg" alt="Icon 1" class="service__icon">
-                <p class="service__label heading-2">Reparații laptopuri</p>
+                <img src="img/intretinere-black.svg" alt="Icon 1" class="service__icon">
+                <p class="service__label heading-2">Întreținere laptopuri</p>
                 <ul class="service__list">
-                    <li class="service__item">Display</li>
-                    <li class="service__item">Tastatura</li>
-                    <li class="service__item">HDD</li>
-                    <li class="service__item">Memorie</li>
+                    <li class="service__item">Curățare completă a interiorului</li>
+                    <li class="service__item">Demontarea și curățarea radiatoarelor</li>
+                    <li class="service__item">Înlocuirea pastei termoconductoare</li>
+                    <li class="service__item">Curățarea și ungerea ventilatorului</li>
                 </ul>
-                <button class="service__btn">Mai mult...</button>
+                <button class="service__btn">Mai multe...</button>
+            </div>
+            <div class="service">
+                <img src="img/telecomanda-white.svg" alt="Icon 1" class="service__icon">
+                <p class="service__label heading-2">Reparații telecomenzi</p>
+                <ul class="service__list">
+                    <li class="service__item">Chei auto cu telecomandă</li>
+                    <li class="service__item">Telecomenzi TV</li>
+                </ul>
+                <button class="service__btn">Mai multe...</button>
+            </div>
+            <div class="service">
+                <img src="img/alte-black.svg" alt="Icon 1" class="service__icon">
+                <p class="service__label heading-2">Alte acitivtăți</p>
+                <ul class="service__list">
+                    <li class="service__item">Magazin electronice</li>
+                    <li class="service__item">Montare mufe pe cabluri UTP/FTP sau de telefon
+                    </li>
+                    <li class="service__item">Salvări date</li>
+                    <li class="service__item">Printare de pe suportul clientului</li>
+                </ul>
+                <a href="#" class="service__link">Stocul magazinului</a>
+            </div>
+        </section>
+        <section class="section-reviews">
+            <img src="img/quote.svg" class="review__icon" alt="Review icon">
+            <figure class='review__user'>
+                <img src="img/user1.jpg" alt="User img" class="review__image">
+                <figcaption class="review__user-name">Cosmin Dorgo</figcaption>
+            </figure>
+            <img src="img/stars-1.svg" alt="Ratings" class="review__rating">
+            <p class="review__text">"Recomand! Se lucreaza foarte rapid si bine!"</p>
+            <div class="review__arrows">
+                <img src="img/angle-left-solid.svg" alt="Arrow left" class="review__arrows--left">
+                <img src="img/angle-right-solid.svg" alt="Arrow right" class="review__arrows--right">
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="footer-box">
+            <div class="footer__information">
+                <img src="img/phone-white.svg" alt="Phone icon" class="footer__icon">
+                <p class="footer__text">0753 681 667</p>
+            </div>
+            <div class="footer__information">
+                <img src="img/pin-white.svg" alt="Pin icon" class="footer__icon">
+                <div class="footer__text-box">
+                    <p class="footer__text">Strada Napoca, nr. 5</p>
+                    <p class="footer__text">Cluj-Napoca, Cluj
+                    </p>
+                    <p class="footer__text">Luni-Joi: 10:15-18:00</p>
+                    <p class="footer__text">Vineri: 10:15-16:00</p>
+                </div>
+            </div>
+            <div class="footer__information">
+                <a href="#" class="footer__link"><img src="img/facebook-white.svg" alt="Facebook icon" class="footer__icon"></a>
+            </div>
+        </div>
+        <p class="footer__copyright">&copy; 2018 Econix - Reparații laptop și telecomenzi</p>
+    </footer>
 </body>
 
 </html>
