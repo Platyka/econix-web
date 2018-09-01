@@ -4,19 +4,37 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../../img/Hero.jpg");
   background-size: cover;
-  height: 50vh;
+  height: 90vw;
   position: relative;
+
+  @media only screen and (min-width: 600px) {
+    height: 65vw;
+  }
+
+  @media only screen and (min-width: 900px) {
+    height: 50vw;
+  }
 
   &__title {
     text-align: center;
     color: var(--color-white);
     font-weight: 400;
     font-size: 3.6rem;
-    padding: 2rem;
+    padding: 4rem;
+  }
+
+  &__box {
+    margin-top: 4.5rem;
+    display: grid;
+    justify-items: center;
+    position: absolute;
+    top: 30%;
+    // left: 50%;
+    // transform: translateX(-50%);
   }
 
   &__cta {
-    margin-top: 4rem !important;
+    width: 16rem;
     background-color: var(--color-primary);
     display: block;
     margin: 0 auto;
@@ -36,11 +54,41 @@
   }
 
   &__img {
-    position: absolute;
     width: 100%;
-    height: auto;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%);
+
+    @media only screen and (min-width: 600px) {
+      width: 80%;
+    }
+
+    @media only screen and (min-width: 900px) {
+      width: 60%;
+    }
   }
+
+  // &__cta {
+  //   margin-top: 4rem !important;
+  //   background-color: var(--color-primary);
+  //   display: block;
+  //   margin: 0 auto;
+  //   font-family: inherit;
+  //   color: var(--color-white);
+  //   border: none;
+  //   border-radius: 100px;
+  //   outline: none;
+  //   cursor: pointer;
+  //   padding: 0.7rem 2rem;
+  //   font-size: 1.6rem;
+  //   transition: all 0.3s ease;
+
+  //   &:hover {
+  //     transform: scale(1.1);
+  //   }
+  // }
+
+  // &__img {
+  //   position: absolute;
+  //   width: 100%;
+  //   left: 50%;
+  //   top: 55%;
+  //   transform: translateX(-50%);
 }

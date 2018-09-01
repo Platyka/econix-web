@@ -8,12 +8,17 @@
 
 html {
   font-size: 62.5%;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 75%;
+  }
 }
 
 body {
   box-sizing: border-box;
   font-family: Roboto;
   color: var(--color-black);
+  line-height: 1.4;
 }
 
 main {

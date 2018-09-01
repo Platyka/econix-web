@@ -1,0 +1,40 @@
+.about-header {
+  grid-column: 1 / -1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../../img/keyboard-black.jpeg);
+  background-size: cover;
+  height: 40vh;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    width: 4rem;
+  }
+}
+
+.about-main {
+  background-color: var(--color-white);
+
+  &__title {
+    font-size: 2.4rem;
+    text-align: center;
+    color: var(--color-black);
+    margin: 3rem 0;
+  }
+
+  &__text-box {
+    padding: 2rem 1rem;
+  }
+
+  &__text-box:nth-of-type(2n) {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  &__text {
+    padding: 1rem 0;
+    // line-height: 1.4;
+  }
+}

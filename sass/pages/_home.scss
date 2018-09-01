@@ -2,10 +2,14 @@
 // SECTION ABOUT
 
 .section-about {
-  height: 50vh;
+  // height: 50vh;
   grid-column: 1/ -1;
   background-color: var(--color-primary);
-  padding: 10rem 1rem 0 1rem;
+  padding: 8rem 1rem 4rem 1rem;
+
+  @media only screen and (min-width: 600px) {
+    padding: 12rem 1rem 4rem 1rem;
+  }
 }
 
 .about {
@@ -13,6 +17,7 @@
   &__text {
     text-align: center;
     font-weight: 400;
+    color: var(--color-white);
   }
 
   &__title {
@@ -25,6 +30,13 @@
 
 .section-services {
   grid-column: 1 / -1;
+
+  @media only screen and (min-width: 768px) {
+    grid-column: 2 / 14;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .service {
@@ -33,6 +45,10 @@
   justify-items: center;
   padding: 2rem 1rem;
   grid-row-gap: 1rem;
+
+  // @media only screen and (min-width: 768px) {
+  //   grid-column: 2 / 6;
+  // }
 
   &__icon {
     width: 8rem;
@@ -94,6 +110,11 @@
   }
 }
 
+.service-2 {
+  @media only screen and (min-width: 768px) {
+    order: -1;
+  }
+}
 // ************************
 // SECTION REVIEWS
 .section-reviews {
@@ -121,7 +142,7 @@
 
   &__rating {
     margin-top: 4rem;
-    width: 40%;
+    height: 2.5rem;
   }
 
   &__arrows {
