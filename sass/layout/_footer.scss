@@ -6,6 +6,15 @@
   &-box {
     width: 70%;
     margin: 0 auto;
+
+    @media only screen and (min-width: 1200px) {
+      width: 100%;
+      display: grid;
+      grid-template-columns:
+        minmax(6rem, 1fr) repeat(12, minmax(min-content, 10rem))
+        minmax(6rem, 1fr);
+      grid-template-rows: 5.5rem 1fr;
+    }
   }
 
   &__information {
@@ -23,15 +32,26 @@
   &__information:last-child {
     justify-content: center;
     margin-bottom: 4rem;
+
+    @media only screen and (min-width: 1200px) {
+      justify-content: flex-start;
+    }
   }
 
   &__icon {
     width: 2rem;
+    @media only screen and (min-width: 1200px) {
+      width: 1.5rem;
+    }
   }
 
   &__icon:last-child {
     width: 1.6rem;
     transition: all 0.3s ease;
+
+    @media only screen and (min-width: 1200px) {
+      width: 1.2rem;
+    }
 
     &:hover {
       transform: scale(1.2);
@@ -40,12 +60,35 @@
 
   &__text {
     color: var(--color-white);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: end;
+    @media only screen and (min-width: 1200px) {
+      font-size: 1.2rem;
+    }
   }
 
   &__copyright {
     color: rgba(255, 255, 255, 0.4);
     text-align: center;
+  }
+}
+
+.information-1 {
+  @media only screen and (min-width: 1200px) {
+    grid-column: 11 / 14;
+    grid-row: 1 / 2;
+  }
+}
+
+.information-2 {
+  @media only screen and (min-width: 1200px) {
+    grid-column: 11/ 14;
+    grid-row: 2 / 3;
+  }
+}
+
+.information-3 {
+  @media only screen and (min-width: 1200px) {
+    grid-column: 2 / 3;
   }
 }
