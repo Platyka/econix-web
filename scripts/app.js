@@ -14,6 +14,7 @@ const userReviewEl = document.querySelector(".review__text");
 const userImageEl = document.querySelector(".review__image");
 const userRatingEl = document.querySelector(".review__rating");
 
+const accordionEl = document.querySelector(".accordion");
 const accordionItemsEl = document.querySelectorAll(".accordion__i");
 
 const users = [
@@ -157,7 +158,7 @@ function previousTestimonial() {
 }
 
 function accordion() {
-  if (accordionItemsEl === true) {
+  if (accordion) {
     accordionItemsEl[0].firstElementChild.nextElementSibling.style.maxHeight =
       accordionItemsEl[0].firstElementChild.nextElementSibling.scrollHeight +
       "px";
