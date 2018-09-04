@@ -7,6 +7,37 @@ const modalCloseBtnEl = document.querySelector(".modal-contact__btn");
 const navBtnEl = document.querySelector(".nav-btn");
 const sideNavBtnEl = document.querySelector(".side-nav-btn");
 const mapEl = document.querySelector(".modal-contact__map");
+const arrowLeft = document.querySelector(".review__arrows--left");
+const arrowRight = document.querySelector(".review__arrows--right");
+const userNameEl = document.querySelector(".review__user-name");
+const userReviewEl = document.querySelector(".review__text");
+const userImageEl = document.querySelector(".review__image");
+const userRatingEl = document.querySelector(".review__rating");
+
+const accordionItemsEl = document.querySelectorAll(".accordion__i");
+
+const users = [
+  {
+    name: "Cosmin Dorgo",
+    review: '"Recomand! Se lucreaza foarte rapid si bine!"',
+    imgSrc: "img/user1.jpg",
+    rating: "img/stars-1.svg"
+  },
+  {
+    name: "Nagy David",
+    review: '"Fast and quality service. I can only recommend it."',
+    imgSrc: "img/user2.jpg",
+    rating: "img/stars-1.svg"
+  },
+  {
+    name: "Active Paper",
+    review: '"Seriozitate maxima! Recomand!"',
+    imgSrc: "img/user3.jpg",
+    rating: "img/stars-1.svg"
+  }
+];
+
+let currentIndex = 0;
 
 function initMap() {
   const uluru = { lat: 46.768078, lng: 23.589234 };
@@ -60,7 +91,97 @@ function closeContactModal() {
   });
 }
 
+function animationRightArrowClick() {
+  userImageEl.style.animation = "slideToLeft 0.5s";
+  userNameEl.style.animation = "slideToLeft 0.5s";
+  userReviewEl.style.animation = "slideToLeft 0.5s";
+  userRatingEl.style.animation = "slideToLeft 0.5s";
+  setTimeout(() => {
+    userImageEl.style.animation = "slideInRight 0.5s";
+    userImageEl.src = users[currentIndex].imgSrc;
+    userNameEl.innerHTML = users[currentIndex].name;
+    userNameEl.style.animation = "slideInRight 0.5s";
+    userReviewEl.innerHTML = users[currentIndex].review;
+    userReviewEl.style.animation = "slideInRight 0.5s";
+    userRatingEl.src = users[currentIndex].rating;
+    userRatingEl.style.animation = "slideInRight 0.5s";
+  }, 500);
+}
+
+function animationLeftArrowClick() {
+  userImageEl.style.animation = "slideToRight 0.5s";
+  userNameEl.style.animation = "slideToRight 0.5s";
+  userReviewEl.style.animation = "slideToRight 0.5s";
+  userRatingEl.style.animation = "slideToRight 0.5s";
+  setTimeout(() => {
+    userImageEl.style.animation = "slideInLeft 0.5s";
+    userImageEl.src = users[currentIndex].imgSrc;
+    userNameEl.innerHTML = users[currentIndex].name;
+    userNameEl.style.animation = "slideInLeft 0.5s";
+    userReviewEl.innerHTML = users[currentIndex].review;
+    userReviewEl.style.animation = "slideInLeft 0.5s";
+    userRatingEl.src = users[currentIndex].rating;
+    userRatingEl.style.animation = "slideInLeft 0.5s";
+  }, 500);
+}
+
+function nextTestimonial() {
+  if (arrowRight) {
+    arrowRight.addEventListener("click", () => {
+      if (currentIndex < users.length - 1) {
+        currentIndex++;
+        arrowLeft.style.opacity = "1";
+        animationRightArrowClick();
+      }
+      if (currentIndex === users.length - 1) {
+        arrowRight.style.opacity = "0.4";
+      }
+    });
+  }
+}
+
+function previousTestimonial() {
+  if (arrowLeft) {
+    arrowLeft.style.opacity = "0.4";
+    arrowLeft.addEventListener("click", () => {
+      if (currentIndex !== 0) {
+        currentIndex--;
+        arrowRight.style.opacity = "1";
+        animationLeftArrowClick();
+      }
+      if (currentIndex === 0) {
+        arrowLeft.style.opacity = "0.4";
+      }
+    });
+  }
+}
+
+function accordion() {
+  console.log(accordionItemsEl[0].firstElementChild.nextElementSibling);
+  accordionItemsEl[0].firstElementChild.nextElementSibling.style.maxHeight =
+    accordionItemsEl[0].firstElementChild.nextElementSibling.scrollHeight +
+    "px";
+  accordionItemsEl[0].firstElementChild.lastElementChild.style.transform =
+    "rotate(180deg)";
+  for (let item of accordionItemsEl) {
+    let accHeader = item.firstElementChild;
+    accHeader.addEventListener("click", () => {
+      let accDetails = accHeader.nextElementSibling;
+      if (accDetails.style.maxHeight) {
+        accDetails.style.maxHeight = null;
+        accHeader.lastElementChild.style.transform = "rotate(0)";
+      } else {
+        accDetails.style.maxHeight = accDetails.scrollHeight + "px";
+        accHeader.lastElementChild.style.transform = "rotate(180deg)";
+      }
+    });
+  }
+}
+
 openNav();
 closeNav();
 openContactModal();
 closeContactModal();
+nextTestimonial();
+previousTestimonial();
+accordion();

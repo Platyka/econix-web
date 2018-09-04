@@ -1,0 +1,61 @@
+.services-header {
+  &__img {
+    width: 8rem;
+  }
+}
+
+.accordion {
+  grid-column: 1 / -1;
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  margin-bottom: 4rem !important;
+
+  @media only screen and (min-width: 768px) {
+    grid-column: 2 / 14;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--color-black);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--last {
+      color: var(--color-primary);
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    transition: all 0.4s ease;
+  }
+
+  &__details {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  &__list {
+    margin-bottom: 1rem;
+  }
+}
+
+h4 {
+  color: var(--color-primary);
+  padding-top: 1.5rem;
+}
+
+p {
+  padding: 1rem 0;
+}
