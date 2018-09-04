@@ -157,24 +157,25 @@ function previousTestimonial() {
 }
 
 function accordion() {
-  console.log(accordionItemsEl[0].firstElementChild.nextElementSibling);
-  accordionItemsEl[0].firstElementChild.nextElementSibling.style.maxHeight =
-    accordionItemsEl[0].firstElementChild.nextElementSibling.scrollHeight +
-    "px";
-  accordionItemsEl[0].firstElementChild.lastElementChild.style.transform =
-    "rotate(180deg)";
-  for (let item of accordionItemsEl) {
-    let accHeader = item.firstElementChild;
-    accHeader.addEventListener("click", () => {
-      let accDetails = accHeader.nextElementSibling;
-      if (accDetails.style.maxHeight) {
-        accDetails.style.maxHeight = null;
-        accHeader.lastElementChild.style.transform = "rotate(0)";
-      } else {
-        accDetails.style.maxHeight = accDetails.scrollHeight + "px";
-        accHeader.lastElementChild.style.transform = "rotate(180deg)";
-      }
-    });
+  if (accordionItemsEl === true) {
+    accordionItemsEl[0].firstElementChild.nextElementSibling.style.maxHeight =
+      accordionItemsEl[0].firstElementChild.nextElementSibling.scrollHeight +
+      "px";
+    accordionItemsEl[0].firstElementChild.lastElementChild.style.transform =
+      "rotate(180deg)";
+    for (let item of accordionItemsEl) {
+      let accHeader = item.firstElementChild;
+      accHeader.addEventListener("click", () => {
+        let accDetails = accHeader.nextElementSibling;
+        if (accDetails.style.maxHeight) {
+          accDetails.style.maxHeight = null;
+          accHeader.lastElementChild.style.transform = "rotate(0)";
+        } else {
+          accDetails.style.maxHeight = accDetails.scrollHeight + "px";
+          accHeader.lastElementChild.style.transform = "rotate(180deg)";
+        }
+      });
+    }
   }
 }
 

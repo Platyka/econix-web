@@ -99,7 +99,7 @@ main {
   height: 90%;
   z-index: 1000;
   display: grid;
-  grid-template-rows: auto auto auto 1fr;
+  grid-template-rows: auto auto auto 2fr;
   backface-visibility: hidden;
   display: none; }
   @media only screen and (min-width: 1200px) {
@@ -130,13 +130,13 @@ main {
     width: 2rem;
     height: 2rem; }
   .modal-contact__title {
-    font-size: 3.6rem;
+    font-size: 3.2rem;
     font-weight: 400;
     margin-bottom: 5rem;
     justify-self: center; }
     @media only screen and (min-width: 768px) {
       .modal-contact__title {
-        font-size: 3.4rem; } }
+        font-size: 3rem; } }
     @media only screen and (min-width: 1200px) {
       .modal-contact__title {
         grid-column: 1 / -1; } }
@@ -173,11 +173,9 @@ main {
     .modal-contact__icon:last-child:hover {
       transform: scale(1.2); }
   .modal-contact__text {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    padding: 0;
     text-align: end; }
-    @media only screen and (min-width: 768px) {
-      .modal-contact__text {
-        font-size: 1.4rem; } }
   .modal-contact__map {
     width: 100%;
     background-color: var(--color-primary); }
