@@ -485,7 +485,7 @@ main {
   margin-top: 5rem;
   grid-column: 1 / -1;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../img/Hero.jpg");
+    url("./../img/Hero.jpg");
   background-size: cover;
   height: 90vw;
   position: relative;
@@ -1044,7 +1044,7 @@ main {
 .services-header {
   grid-column: 1 / -1;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(./..//img/keyboard-black.jpeg);
+    url(./../img/keyboard-black.jpeg);
   background-size: cover;
   height: 40vh;
   margin-top: 5rem;
