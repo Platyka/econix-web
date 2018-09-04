@@ -158,25 +158,23 @@ function previousTestimonial() {
 }
 
 function accordion() {
-  if (accordion) {
-    accordionItemsEl[0].firstElementChild.nextElementSibling.style.maxHeight =
-      accordionItemsEl[0].firstElementChild.nextElementSibling.scrollHeight +
-      "px";
-    accordionItemsEl[0].firstElementChild.lastElementChild.style.transform =
-      "rotate(180deg)";
-    for (let item of accordionItemsEl) {
-      let accHeader = item.firstElementChild;
-      accHeader.addEventListener("click", () => {
-        let accDetails = accHeader.nextElementSibling;
-        if (accDetails.style.maxHeight) {
-          accDetails.style.maxHeight = null;
-          accHeader.lastElementChild.style.transform = "rotate(0)";
-        } else {
-          accDetails.style.maxHeight = accDetails.scrollHeight + "px";
-          accHeader.lastElementChild.style.transform = "rotate(180deg)";
-        }
-      });
-    }
+  accordionItemsEl[0].firstElementChild.nextElementSibling.style.maxHeight =
+    accordionItemsEl[0].firstElementChild.nextElementSibling.scrollHeight +
+    "px";
+  accordionItemsEl[0].firstElementChild.lastElementChild.style.transform =
+    "rotate(180deg)";
+  for (let item of accordionItemsEl) {
+    let accHeader = item.firstElementChild;
+    accHeader.addEventListener("click", () => {
+      let accDetails = accHeader.nextElementSibling;
+      if (accDetails.style.maxHeight) {
+        accDetails.style.maxHeight = null;
+        accHeader.lastElementChild.style.transform = "rotate(0)";
+      } else {
+        accDetails.style.maxHeight = accDetails.scrollHeight + "px";
+        accHeader.lastElementChild.style.transform = "rotate(180deg)";
+      }
+    });
   }
 }
 
