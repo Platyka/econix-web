@@ -53,13 +53,21 @@ function openNav() {
   });
 }
 
+// function closeNav() {
+//   window.addEventListener("click", event => {
+//     if (event.target.classList.contains("backdrop")) {
+//       sideNavEl.classList.remove("open");
+//       backdropEl.classList.remove("show");
+//       contactModalEl.classList.remove("showModal");
+//     }
+//   });
+// }
+
 function closeNav() {
-  window.addEventListener("click", event => {
-    if (event.target.classList.contains("backdrop")) {
-      sideNavEl.classList.remove("open");
-      backdropEl.classList.remove("show");
-      contactModalEl.classList.remove("showModal");
-    }
+  backdropEl.addEventListener("click", () => {
+    sideNavEl.classList.remove("open");
+    backdropEl.classList.remove("show");
+    contactModalEl.classList.remove("showModal");
   });
 }
 
